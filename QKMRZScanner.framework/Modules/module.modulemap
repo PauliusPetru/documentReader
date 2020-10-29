@@ -1,0 +1,11 @@
+framework module QKMRZScanner {
+  umbrella header "QKMRZScanner.h"
+
+  export *
+  module * { export * }
+}
+
+module QKMRZScanner.Swift {
+    header "QKMRZScanner-Swift.h"
+    requires objc
+}
