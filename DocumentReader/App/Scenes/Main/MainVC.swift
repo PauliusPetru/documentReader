@@ -14,3 +14,4 @@ class ViewController: UIViewController {
         AVCaptureDevice.requestAccess(for: AVMediaType.video) { _ in }
     }
 }
+//TODO: two buttons |scan| |send|

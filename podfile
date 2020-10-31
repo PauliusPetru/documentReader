@@ -3,5 +3,4 @@ inhibit_all_warnings!
 target 'DocumentReader' do
   use_frameworks!
   pod 'Alamofire'
-  pod 'QKMRZScanner', '~> 2.1.2'
 end

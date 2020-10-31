@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="sN1-hu-viu">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -32,41 +32,60 @@
                             <constraint firstItem="vsD-Z1-Oy3" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="fAD-9O-Ear"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="Rnt-JO-sXk"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-254" y="98"/>
+            <point key="canvasLocation" x="539" y="98"/>
         </scene>
         <!--CameraVC-->
         <scene sceneID="CSs-C0-BrV">
             <objects>
-                <viewController id="rAH-aT-5sg" customClass="CameraVC" customModule="DocumentReader" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="rAH-aT-5sg" customClass="CameraVC" customModule="DocumentReader" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="k4C-Ep-zfb">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="J6q-Sj-fhn" customClass="QKMRZScannerView" customModule="QKMRZScanner">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7Fb-mf-M27" customClass="CameraView" customModule="DocumentReader" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="dmm-hf-AoZ"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="dmm-hf-AoZ" firstAttribute="trailing" secondItem="J6q-Sj-fhn" secondAttribute="trailing" id="3hA-Uq-CFj"/>
-                            <constraint firstItem="J6q-Sj-fhn" firstAttribute="top" secondItem="dmm-hf-AoZ" secondAttribute="top" id="BI2-xr-JtB"/>
-                            <constraint firstItem="dmm-hf-AoZ" firstAttribute="bottom" secondItem="J6q-Sj-fhn" secondAttribute="bottom" id="dSX-Wb-sIF"/>
-                            <constraint firstItem="J6q-Sj-fhn" firstAttribute="leading" secondItem="dmm-hf-AoZ" secondAttribute="leading" id="ebe-lZ-wE6"/>
+                            <constraint firstItem="dmm-hf-AoZ" firstAttribute="bottom" secondItem="7Fb-mf-M27" secondAttribute="bottom" id="7qg-3h-Yw8"/>
+                            <constraint firstItem="7Fb-mf-M27" firstAttribute="top" secondItem="dmm-hf-AoZ" secondAttribute="top" id="IJh-kf-isC"/>
+                            <constraint firstItem="7Fb-mf-M27" firstAttribute="leading" secondItem="dmm-hf-AoZ" secondAttribute="leading" id="p9m-W3-xE7"/>
+                            <constraint firstItem="dmm-hf-AoZ" firstAttribute="trailing" secondItem="7Fb-mf-M27" secondAttribute="trailing" id="sIa-kK-2hW"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Iz4-kp-ubl"/>
                     <connections>
-                        <outlet property="mrzScannerView" destination="J6q-Sj-fhn" id="cbE-Sw-XR0"/>
+                        <outlet property="cameraView" destination="7Fb-mf-M27" id="gKD-If-RoW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ekd-Mc-1TE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="449" y="98"/>
+            <point key="canvasLocation" x="1289.8550724637682" y="97.767857142857139"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="1ov-ye-ztq">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="sN1-hu-viu" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="066-IO-efH">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="voh-WF-et1"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jql-8Z-Pyg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-255.07246376811597" y="97.767857142857139"/>
         </scene>
     </scenes>
     <resources>

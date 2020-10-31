@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		B4A03011254DC9E300D71F37 /* CameraVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4A03010254DC9E300D71F37 /* CameraVC.swift */; };
 		B4A0301C254DD2F600D71F37 /* IsDebug.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4A0301B254DD2F600D71F37 /* IsDebug.swift */; };
+		B4A0303E254DE4A600D71F37 /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4A0303D254DE4A600D71F37 /* CameraView.swift */; };
 		B4DE2C99254B35F300B14E07 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4DE2C98254B35F300B14E07 /* AppDelegate.swift */; };
 		B4DE2C9B254B35F300B14E07 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4DE2C9A254B35F300B14E07 /* SceneDelegate.swift */; };
 		B4DE2C9D254B35F300B14E07 /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4DE2C9C254B35F300B14E07 /* MainVC.swift */; };
@@ -64,6 +65,7 @@
 		9E583C605319D591361BB75C /* Pods-DocumentReader.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DocumentReader.debug.xcconfig"; path = "Target Support Files/Pods-DocumentReader/Pods-DocumentReader.debug.xcconfig"; sourceTree = "<group>"; };
 		B4A03010254DC9E300D71F37 /* CameraVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraVC.swift; sourceTree = "<group>"; };
 		B4A0301B254DD2F600D71F37 /* IsDebug.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IsDebug.swift; sourceTree = "<group>"; };
+		B4A0303D254DE4A600D71F37 /* CameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraView.swift; sourceTree = "<group>"; };
 		B4DE2C95254B35F300B14E07 /* DocumentReader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DocumentReader.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B4DE2C98254B35F300B14E07 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B4DE2C9A254B35F300B14E07 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -133,6 +135,14 @@
 				4FB7B8346D521E1788A16D84 /* Pods-DocumentReader.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		B4A0303C254DE49700D71F37 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				B4A0303D254DE4A600D71F37 /* CameraView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		B4DE2C8C254B35F300B14E07 = {
@@ -237,6 +247,7 @@
 		B4DE2CDA254B372600B14E07 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				B4A0303C254DE49700D71F37 /* Views */,
 				B4DE2CDB254B373E00B14E07 /* VMs */,
 				B4DE2C9C254B35F300B14E07 /* MainVC.swift */,
 				B4A03010254DC9E300D71F37 /* CameraVC.swift */,
@@ -458,6 +469,7 @@
 			files = (
 				B4DE2DAE254B486900B14E07 /* JSONCodable.swift in Sources */,
 				B4DE2C9D254B35F300B14E07 /* MainVC.swift in Sources */,
+				B4A0303E254DE4A600D71F37 /* CameraView.swift in Sources */,
 				B4DE2D30254B3A5500B14E07 /* Identification.swift in Sources */,
 				B4A0301C254DD2F600D71F37 /* IsDebug.swift in Sources */,
 				B4DE2D4D254B3F6C00B14E07 /* Error+Extension.swift in Sources */,
