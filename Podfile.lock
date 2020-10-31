@@ -1,16 +1,28 @@
 PODS:
   - Alamofire (5.3.0)
+  - QKMRZParser (1.0.1)
+  - QKMRZScanner (2.1.2):
+    - QKMRZParser
+    - SwiftyTesseract
+  - SwiftyTesseract (3.1.3)
 
 DEPENDENCIES:
   - Alamofire
+  - QKMRZScanner (~> 2.1.2)
 
 SPEC REPOS:
   trunk:
     - Alamofire
+    - QKMRZParser
+    - QKMRZScanner
+    - SwiftyTesseract
 
 SPEC CHECKSUMS:
   Alamofire: 2c792affbdc2f18016e08fdbcacd60aebe1ba593
+  QKMRZParser: 07921dbffa7e4064406113731bc0f1f5e6210bce
+  QKMRZScanner: aaf269e766c4a51526034e7c4e695078b7dfeb0e
+  SwiftyTesseract: 1f3d96668ae92dc2208d9842c8a59bea9fad2cbb
 
-PODFILE CHECKSUM: 37b650bd885df2ac81f17a2420cc369952f96eff
+PODFILE CHECKSUM: 3acdbe9c0927cd398b3ef5f18960b62c7027003c
 
-COCOAPODS: 1.9.3
+COCOAPODS: 1.10.0
