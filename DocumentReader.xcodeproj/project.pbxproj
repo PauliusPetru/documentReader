@@ -27,6 +27,8 @@
 		B4DE2D90254B46A600B14E07 /* Pods_DocumentReader.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E304D2A44EBB828864B4B60A /* Pods_DocumentReader.framework */; };
 		B4DE2D91254B46A600B14E07 /* Pods_DocumentReader.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E304D2A44EBB828864B4B60A /* Pods_DocumentReader.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B4DE2DAE254B486900B14E07 /* JSONCodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4DE2DAD254B486900B14E07 /* JSONCodable.swift */; };
+		B4F5462325512D420042810D /* CameraVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4F5462225512D420042810D /* CameraVM.swift */; };
+		B4F5462E255137640042810D /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4F5462D255137640042810D /* String+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -89,6 +91,8 @@
 		B4DE2DAD254B486900B14E07 /* JSONCodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONCodable.swift; sourceTree = "<group>"; };
 		B4DE2DBA254B4A8100B14E07 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
 		B4DE2DEB254B4FC700B14E07 /* QKMRZScanner.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = QKMRZScanner.framework; sourceTree = "<group>"; };
+		B4F5462225512D420042810D /* CameraVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraVM.swift; sourceTree = "<group>"; };
+		B4F5462D255137640042810D /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 		E304D2A44EBB828864B4B60A /* Pods_DocumentReader.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DocumentReader.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -260,6 +264,7 @@
 			isa = PBXGroup;
 			children = (
 				B4DE2CDD254B375700B14E07 /* MainVM.swift */,
+				B4F5462225512D420042810D /* CameraVM.swift */,
 			);
 			path = VMs;
 			sourceTree = "<group>";
@@ -269,6 +274,7 @@
 			children = (
 				B4DE2D4C254B3F6C00B14E07 /* Error+Extension.swift */,
 				B4A0301B254DD2F600D71F37 /* IsDebug.swift */,
+				B4F5462D255137640042810D /* String+Extension.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -468,6 +474,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B4DE2DAE254B486900B14E07 /* JSONCodable.swift in Sources */,
+				B4F5462325512D420042810D /* CameraVM.swift in Sources */,
 				B4DE2C9D254B35F300B14E07 /* MainVC.swift in Sources */,
 				B4A0303E254DE4A600D71F37 /* CameraView.swift in Sources */,
 				B4DE2D30254B3A5500B14E07 /* Identification.swift in Sources */,
@@ -479,6 +486,7 @@
 				B4DE2D3A254B3B3700B14E07 /* RequestConfig.swift in Sources */,
 				B4DE2C9B254B35F300B14E07 /* SceneDelegate.swift in Sources */,
 				B4DE2D35254B3AC500B14E07 /* API.swift in Sources */,
+				B4F5462E255137640042810D /* String+Extension.swift in Sources */,
 				B4DE2CDE254B375700B14E07 /* MainVM.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

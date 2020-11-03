@@ -1,5 +1,4 @@
 import UIKit
-import Vision
 
 final class CameraVC: UIViewController {
     
@@ -7,53 +6,39 @@ final class CameraVC: UIViewController {
     @IBOutlet weak private var imageView: UIImageView!
     @IBOutlet weak private var loadingIndicator: UIActivityIndicatorView!
     
-    private var isProcessing = false
+    private var cameraVM: CameraVM?
+    var onMrzDetected: ((String) -> ())?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        cameraVM = CameraVM()
         cameraView.delegate = self
     }
     
-    private func generateText(from image: CGImage) -> [String] {
-        isProcessing = true
-        // Create a new image-request handler.
-        let requestHandler = VNImageRequestHandler(cgImage: image)
-        
-        var strings = [String]()
-        // Create a new request to recognize text.
-        let request = VNRecognizeTextRequest { [weak self] request, error in
-            guard let self = self else { return }
-            strings = self.recognizeTextHandler(request: request, error: error)
-        }
-
-        do {
-            // Perform the text-recognition request.
-            try requestHandler.perform([request])
-        } catch {
-            isProcessing = false
-            print("🔴 Unable to perform the requests: \(error).")
-        }
-        isProcessing = false
-        return strings
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        cameraVM = nil
     }
     
-    private func recognizeTextHandler(request: VNRequest, error: Error?) -> [String] {
-        guard let observations =
-                request.results as? [VNRecognizedTextObservation] else {
-            return []
-        }
-        let recognizedStrings = observations.compactMap { observation in
-            // Return the string of the top VNRecognizedText instance.
-            return observation.topCandidates(1).first?.string
-        }
-        
-        // Process the recognized strings.
-        return recognizedStrings
+    private func handleScanned(image: CGImage) {
+        let textsArray = cameraVM?.generateText(from: image)
+        //would be great to have greater validation :D
+        let MRZtexts = textsArray?.filter { $0.contains("<<") } ?? []
+        guard MRZtexts.count == 2 else { return }
+        onMrzDetected?(MRZtexts.joined())
+        dismiss(animated: true, completion: nil)
     }
+    
+    //TODO: Here should be all the magic about better image recognising
+    //convert to grayscale and calculate is it have more then half of it black
+    //if yes suggest to turn on flash light //flashLightButton.isHidden = false
+    //Would be nice to create some fancy torch level automatic calculation
+    //if flashlightIsOn
+    //if more than half pixels are white - shut down level of flashLight torch
+    //if more then half pixels are black - increase level of flashLight torch
 }
 extension CameraVC: CameraViewDelegate {
     func processed(image: CGImage) {
-        guard !isProcessing else { return }
-        print("🟢 \(generateText(from: image))")
+        handleScanned(image: image)
     }
 }
