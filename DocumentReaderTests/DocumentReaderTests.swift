@@ -1,17 +1,27 @@
 import Quick
 import Nimble
-import AVKit
 @testable import DocumentReader
 
 class DocumentReaderTests: QuickSpec {
     
     override func spec() {
-        describe("asdasda") {
-            guard let blackImage = #imageLiteral(resourceName: "Screenshot 2020-10-31 at 20.05.30").cgImage else {
-                fail("failed creating cgimage")
+        
+        var vm: CameraVM!
+        
+        beforeSuite {
+            vm = CameraVM()
+        }
+        
+        context("should create image") {
+            guard let cgImage = #imageLiteral(resourceName: "black").cgImage else {
+                fail("failed convert from uiimage to cgimage")
                 return
             }
-            it("ewdsfxefsd") {
+            it("should receive output to turn on torch") {
+                vm.handle(input: .scanned(cgImage))
+                vm.outputHandler = { output in
+                    expect(output).to(equal(.turnTorch))
+                }
             }
         }
     }

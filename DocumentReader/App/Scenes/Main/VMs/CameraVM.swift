@@ -8,7 +8,7 @@ final class CameraVM: ViewModel {
     enum Input {
         case scanned(CGImage)
     }
-    enum Output {
+    enum Output: Equatable {
         case processed(String)
         case turnTorch
     }
