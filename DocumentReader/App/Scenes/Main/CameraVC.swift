@@ -1,11 +1,13 @@
 import UIKit
+import AVKit
 
 final class CameraVC: UIViewController {
     
     @IBOutlet weak private var cameraView: CameraView!
     @IBOutlet weak private var imageView: UIImageView!
     @IBOutlet weak private var loadingIndicator: UIActivityIndicatorView!
-
+    @IBOutlet weak var torchButton: UIButton!
+    
     internal var viewModel: CameraVM?
     var onMrzDetected: ((String) -> ())?
     
@@ -16,13 +18,13 @@ final class CameraVC: UIViewController {
         cameraView.delegate = self
     }
     
-    //TODO: Here should be all the magic about better image recognising
-    //convert to grayscale and calculate is it have more then half of it black
-    //if yes suggest to turn on flash light //flashLightButton.isHidden = false
-    //Would be nice to create some fancy torch level automatic calculation
-    //if flashlightIsOn
-    //if more than half pixels are white - shut down level of flashLight torch
-    //if more then half pixels are black - increase level of flashLight torch
+    private func toogleTorch() {
+        let device = AVCaptureDevice.default(for: AVMediaType.video)
+        if device?.hasTorch ?? false {
+            try? device?.lockForConfiguration()
+            device?.torchMode = .on
+        }
+    }
 }
 
 extension CameraVC: CameraViewDelegate {
@@ -38,8 +40,12 @@ extension CameraVC: Bindable {
             switch output {
             case .processed(let mrz):
                 self.onMrzDetected?(mrz)
-                DispatchQueue.main.async {
+                asyncOnMain {
                     self.dismiss(animated: true, completion: nil)
+                }
+            case .turnTorch:
+                asyncOnMain {
+                    self.toogleTorch()
                 }
             }
         }

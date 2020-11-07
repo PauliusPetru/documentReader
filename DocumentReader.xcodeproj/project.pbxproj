@@ -13,6 +13,8 @@
 		B4C297422556AF0800FF0405 /* Bindable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4C297412556AF0800FF0405 /* Bindable.swift */; };
 		B4C297482556AF1900FF0405 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4C297472556AF1900FF0405 /* ViewModel.swift */; };
 		B4C2974C2556BA4B00FF0405 /* ValidationError.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4C2974B2556BA4B00FF0405 /* ValidationError.swift */; };
+		B4C297542556E27E00FF0405 /* CGImage+Brightness.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4C297532556E27E00FF0405 /* CGImage+Brightness.swift */; };
+		B4C297582556E6DC00FF0405 /* AsyncOnMain.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4C297572556E6DC00FF0405 /* AsyncOnMain.swift */; };
 		B4DE2C99254B35F300B14E07 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4DE2C98254B35F300B14E07 /* AppDelegate.swift */; };
 		B4DE2C9B254B35F300B14E07 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4DE2C9A254B35F300B14E07 /* SceneDelegate.swift */; };
 		B4DE2C9D254B35F300B14E07 /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4DE2C9C254B35F300B14E07 /* MainVC.swift */; };
@@ -74,6 +76,8 @@
 		B4C297412556AF0800FF0405 /* Bindable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bindable.swift; sourceTree = "<group>"; };
 		B4C297472556AF1900FF0405 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		B4C2974B2556BA4B00FF0405 /* ValidationError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationError.swift; sourceTree = "<group>"; };
+		B4C297532556E27E00FF0405 /* CGImage+Brightness.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGImage+Brightness.swift"; sourceTree = "<group>"; };
+		B4C297572556E6DC00FF0405 /* AsyncOnMain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncOnMain.swift; sourceTree = "<group>"; };
 		B4DE2C95254B35F300B14E07 /* DocumentReader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DocumentReader.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B4DE2C98254B35F300B14E07 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B4DE2C9A254B35F300B14E07 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -160,6 +164,7 @@
 			children = (
 				B4C297412556AF0800FF0405 /* Bindable.swift */,
 				B4C297472556AF1900FF0405 /* ViewModel.swift */,
+				B4C297572556E6DC00FF0405 /* AsyncOnMain.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -292,6 +297,7 @@
 				B4DE2D4C254B3F6C00B14E07 /* Error+Extension.swift */,
 				B4A0301B254DD2F600D71F37 /* IsDebug.swift */,
 				B4F5462D255137640042810D /* String+Extension.swift */,
+				B4C297532556E27E00FF0405 /* CGImage+Brightness.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -498,6 +504,7 @@
 				B4C2974C2556BA4B00FF0405 /* ValidationError.swift in Sources */,
 				B4A0301C254DD2F600D71F37 /* IsDebug.swift in Sources */,
 				B4C297482556AF1900FF0405 /* ViewModel.swift in Sources */,
+				B4C297582556E6DC00FF0405 /* AsyncOnMain.swift in Sources */,
 				B4DE2D4D254B3F6C00B14E07 /* Error+Extension.swift in Sources */,
 				B4DE2C99254B35F300B14E07 /* AppDelegate.swift in Sources */,
 				B4A03011254DC9E300D71F37 /* CameraVC.swift in Sources */,
@@ -505,6 +512,7 @@
 				B4C297422556AF0800FF0405 /* Bindable.swift in Sources */,
 				B4DE2D3A254B3B3700B14E07 /* RequestConfig.swift in Sources */,
 				B4DE2C9B254B35F300B14E07 /* SceneDelegate.swift in Sources */,
+				B4C297542556E27E00FF0405 /* CGImage+Brightness.swift in Sources */,
 				B4DE2D35254B3AC500B14E07 /* API.swift in Sources */,
 				B4F5462E255137640042810D /* String+Extension.swift in Sources */,
 				B4DE2CDE254B375700B14E07 /* MainVM.swift in Sources */,

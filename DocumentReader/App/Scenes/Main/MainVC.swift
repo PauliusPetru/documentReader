@@ -51,9 +51,13 @@ extension ViewController: Bindable {
         let outputHandler: MainVM.OutputHandler = { output in
             switch output {
             case .cardInformation(let response):
-                self.representInfo(validationResponse: response)
+                asyncOnMain {
+                    self.representInfo(validationResponse: response)
+                }
             case .receiveError(let errorString):
-                self.representFail(with: errorString)
+                asyncOnMain {
+                    self.representFail(with: errorString)
+                }
             }
         }
         viewModel?.outputHandler = outputHandler

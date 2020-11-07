@@ -10,6 +10,7 @@ final class CameraVM: ViewModel {
     }
     enum Output {
         case processed(String)
+        case turnTorch
     }
 
     var outputHandler: OutputHandler?
@@ -26,6 +27,10 @@ final class CameraVM: ViewModel {
     private var isProcessing = false
     
     private func processMrz(from image: CGImage) {
+        guard image.brightness > 90 else {
+            outputHandler?(.turnTorch)
+            return
+        }
         isProcessing = true
         // Create a new image-request handler.
         let requestHandler = VNImageRequestHandler(cgImage: image)

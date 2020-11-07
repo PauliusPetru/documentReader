@@ -119,7 +119,21 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7Fb-mf-M27" customClass="CameraView" customModule="DocumentReader" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <subviews>
+                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vfU-Zj-gtU">
+                                        <rect key="frame" x="187" y="684" width="40" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="VOy-aj-wzA"/>
+                                            <constraint firstAttribute="width" constant="40" id="kOU-bp-JkI"/>
+                                        </constraints>
+                                        <state key="normal" image="flashlight.on.fill" catalog="system"/>
+                                    </button>
+                                </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="vfU-Zj-gtU" firstAttribute="centerX" secondItem="7Fb-mf-M27" secondAttribute="centerX" id="nyK-Jn-txX"/>
+                                    <constraint firstAttribute="bottom" secondItem="vfU-Zj-gtU" secondAttribute="bottom" constant="50" id="v8t-cU-xQy"/>
+                                </constraints>
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="dmm-hf-AoZ"/>
@@ -134,6 +148,7 @@
                     <navigationItem key="navigationItem" id="Iz4-kp-ubl"/>
                     <connections>
                         <outlet property="cameraView" destination="7Fb-mf-M27" id="gKD-If-RoW"/>
+                        <outlet property="torchButton" destination="vfU-Zj-gtU" id="Hwa-rr-D7V"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ekd-Mc-1TE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -160,6 +175,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="flashlight.on.fill" catalog="system" width="76" height="128"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
