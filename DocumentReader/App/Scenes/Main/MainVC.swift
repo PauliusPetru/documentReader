@@ -6,12 +6,14 @@ final class ViewController: UIViewController {
     @IBOutlet private weak var nameLabel: UILabel!
     @IBOutlet private weak var secondNameLabel: UILabel!
     @IBOutlet private weak var isValidLabel: UILabel!
+    @IBOutlet private weak var errorLabel: UILabel!
     
-    private var mainVM: MainVM?
-
+    internal var viewModel: MainVM?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        mainVM = MainVM()
+        viewModel = MainVM()
+        bind(viewModel: viewModel)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -20,22 +22,21 @@ final class ViewController: UIViewController {
         AVCaptureDevice.requestAccess(for: AVMediaType.video) { _ in }
     }
     
-    override func viewDidDisappear(_ animated: Bool) {
-        super.viewDidDisappear(animated)
-        mainVM = nil
-    }
-    
     private func validateCardInfo(_ mrz: String) {
-        mainVM?.validateRequest(mrz: mrz) { [weak self] response in
-            guard let response = response else { return }
-            self?.representInfo(validationResponse: response)
-        }
+        print("🟢 \(mrz)")
+        viewModel?.handle(input: .receivedCard(mrz))
     }
     
     private func representInfo(validationResponse: ValidationResponse) {
         nameLabel.text = validationResponse.data.firstName
         secondNameLabel.text = validationResponse.data.lastName
         isValidLabel.text = "\(validationResponse.data.documentValid)"
+        errorLabel.isHidden = true
+    }
+    
+    private func representFail(with string: String) {
+        errorLabel.isHidden = false
+        errorLabel.text = string
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -43,5 +44,20 @@ final class ViewController: UIViewController {
         (segue.destination as? CameraVC)?.onMrzDetected = { [weak self] mrz in
             self?.validateCardInfo(mrz)
         }
+    }
+}
+
+extension ViewController: Bindable {
+    func bind(viewModel: MainVM?) {
+        let outputHandler: MainVM.OutputHandler = { output in
+            switch output {
+            case .cardInformation(let response):
+                self.representInfo(validationResponse: response)
+            case .receiveError(let errorString):
+                self.representFail(with: errorString)
+            }
+        }
+        viewModel?.outputHandler = outputHandler
+        self.viewModel = viewModel
     }
 }

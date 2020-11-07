@@ -21,12 +21,11 @@ final class CameraVC: UIViewController {
     }
     
     private func handleScanned(image: CGImage) {
-        let textsArray = cameraVM?.generateText(from: image)
-        //would be great to have greater validation :D
-        let MRZtexts = textsArray?.filter { $0.contains("<<") } ?? []
-        guard MRZtexts.count == 2 else { return }
-        onMrzDetected?(MRZtexts.joined())
-        dismiss(animated: true, completion: nil)
+        guard let mrzFromImage = cameraVM?.processMrz(from: image) else { return }
+        onMrzDetected?(mrzFromImage)
+        DispatchQueue.main.async {
+            self.dismiss(animated: true, completion: nil)
+        }
     }
     
     //TODO: Here should be all the magic about better image recognising

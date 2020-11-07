@@ -10,6 +10,9 @@
 		B4A03011254DC9E300D71F37 /* CameraVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4A03010254DC9E300D71F37 /* CameraVC.swift */; };
 		B4A0301C254DD2F600D71F37 /* IsDebug.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4A0301B254DD2F600D71F37 /* IsDebug.swift */; };
 		B4A0303E254DE4A600D71F37 /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4A0303D254DE4A600D71F37 /* CameraView.swift */; };
+		B4C297422556AF0800FF0405 /* Bindable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4C297412556AF0800FF0405 /* Bindable.swift */; };
+		B4C297482556AF1900FF0405 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4C297472556AF1900FF0405 /* ViewModel.swift */; };
+		B4C2974C2556BA4B00FF0405 /* ValidationError.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4C2974B2556BA4B00FF0405 /* ValidationError.swift */; };
 		B4DE2C99254B35F300B14E07 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4DE2C98254B35F300B14E07 /* AppDelegate.swift */; };
 		B4DE2C9B254B35F300B14E07 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4DE2C9A254B35F300B14E07 /* SceneDelegate.swift */; };
 		B4DE2C9D254B35F300B14E07 /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4DE2C9C254B35F300B14E07 /* MainVC.swift */; };
@@ -68,6 +71,9 @@
 		B4A03010254DC9E300D71F37 /* CameraVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraVC.swift; sourceTree = "<group>"; };
 		B4A0301B254DD2F600D71F37 /* IsDebug.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IsDebug.swift; sourceTree = "<group>"; };
 		B4A0303D254DE4A600D71F37 /* CameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraView.swift; sourceTree = "<group>"; };
+		B4C297412556AF0800FF0405 /* Bindable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bindable.swift; sourceTree = "<group>"; };
+		B4C297472556AF1900FF0405 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
+		B4C2974B2556BA4B00FF0405 /* ValidationError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationError.swift; sourceTree = "<group>"; };
 		B4DE2C95254B35F300B14E07 /* DocumentReader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DocumentReader.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B4DE2C98254B35F300B14E07 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B4DE2C9A254B35F300B14E07 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -149,6 +155,15 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		B4C297402556AEF200FF0405 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				B4C297412556AF0800FF0405 /* Bindable.swift */,
+				B4C297472556AF1900FF0405 /* ViewModel.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		B4DE2C8C254B35F300B14E07 = {
 			isa = PBXGroup;
 			children = (
@@ -204,6 +219,7 @@
 				B4DE2CD4254B36EC00B14E07 /* API */,
 				B4DE2CD5254B36F500B14E07 /* Models */,
 				B4DE2D4A254B3F4C00B14E07 /* Utils */,
+				B4C297402556AEF200FF0405 /* Helpers */,
 				B4DE2CD6254B370200B14E07 /* Scenes */,
 				B4DE2C98254B35F300B14E07 /* AppDelegate.swift */,
 				B4DE2C9A254B35F300B14E07 /* SceneDelegate.swift */,
@@ -236,6 +252,7 @@
 			isa = PBXGroup;
 			children = (
 				B4DE2D54254B424800B14E07 /* ValidationResponse.swift */,
+				B4C2974B2556BA4B00FF0405 /* ValidationError.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -478,11 +495,14 @@
 				B4DE2C9D254B35F300B14E07 /* MainVC.swift in Sources */,
 				B4A0303E254DE4A600D71F37 /* CameraView.swift in Sources */,
 				B4DE2D30254B3A5500B14E07 /* Identification.swift in Sources */,
+				B4C2974C2556BA4B00FF0405 /* ValidationError.swift in Sources */,
 				B4A0301C254DD2F600D71F37 /* IsDebug.swift in Sources */,
+				B4C297482556AF1900FF0405 /* ViewModel.swift in Sources */,
 				B4DE2D4D254B3F6C00B14E07 /* Error+Extension.swift in Sources */,
 				B4DE2C99254B35F300B14E07 /* AppDelegate.swift in Sources */,
 				B4A03011254DC9E300D71F37 /* CameraVC.swift in Sources */,
 				B4DE2D55254B424800B14E07 /* ValidationResponse.swift in Sources */,
+				B4C297422556AF0800FF0405 /* Bindable.swift in Sources */,
 				B4DE2D3A254B3B3700B14E07 /* RequestConfig.swift in Sources */,
 				B4DE2C9B254B35F300B14E07 /* SceneDelegate.swift in Sources */,
 				B4DE2D35254B3AC500B14E07 /* API.swift in Sources */,

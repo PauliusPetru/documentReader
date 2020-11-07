@@ -2,14 +2,10 @@ import Foundation
 import Vision
 
 final class CameraVM: NSObject {
-    
+    //TODO: rewrite
     private var isProcessing = false
-
-    override init() {
-        super.init()
-    }
     
-    func generateText(from image: CGImage) -> [String] {
+    func processMrz(from image: CGImage) -> String? {
         isProcessing = true
         // Create a new image-request handler.
         let requestHandler = VNImageRequestHandler(cgImage: image)
@@ -18,7 +14,7 @@ final class CameraVM: NSObject {
         // Create a new request to recognize text.
         let request = VNRecognizeTextRequest { [weak self] request, error in
             guard let self = self else { return }
-            strings = self.recognizeTextHandler(request: request, error: error)
+            strings = self.recognizeText(from: request, error: error)
         }
 
         do {
@@ -29,10 +25,10 @@ final class CameraVM: NSObject {
             print("🔴 Unable to perform the requests: \(error).")
         }
         isProcessing = false
-        return strings
+        return validateMrz(from: strings)
     }
     
-    private func recognizeTextHandler(request: VNRequest, error: Error?) -> [String] {
+    private func recognizeText(from request: VNRequest, error: Error?) -> [String] {
         guard let observations =
                 request.results as? [VNRecognizedTextObservation] else {
             return []
@@ -44,5 +40,15 @@ final class CameraVM: NSObject {
         
         // Process the recognized strings.
         return recognizedStrings
+    }
+    
+    private func validateMrz(from strings: [String]) -> String? {
+        guard let stateCode = strings.first(where: { $0.count == 3 }),
+        let passportNo = strings.first(where: { $0.count == 8 && $0.isInt }),
+        let firstMrzLine = strings.first(where: { $0.count == 44 && $0.contains(stateCode) }),
+        let secondMrzLine = strings.first(where: { $0.count == 44 && $0.contains(passportNo) }) else {
+            return nil
+        }
+        return firstMrzLine + secondMrzLine
     }
 }
