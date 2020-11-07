@@ -1,6 +1,13 @@
 platform :ios, '12.0'
+use_frameworks!
 inhibit_all_warnings!
 target 'DocumentReader' do
-  use_frameworks!
   pod 'Alamofire'
+
+	target 'DocumentReaderTests' do
+	  inherit! :complete
+	  pod 'Nimble'
+	  pod 'Quick'
+	end
 end
+

@@ -6,7 +6,6 @@ final class CameraVC: UIViewController {
     @IBOutlet weak private var cameraView: CameraView!
     @IBOutlet weak private var imageView: UIImageView!
     @IBOutlet weak private var loadingIndicator: UIActivityIndicatorView!
-    @IBOutlet weak var torchButton: UIButton!
     
     internal var viewModel: CameraVM?
     var onMrzDetected: ((String) -> ())?

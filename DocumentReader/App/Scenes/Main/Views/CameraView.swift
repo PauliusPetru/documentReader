@@ -75,6 +75,14 @@ final class CameraView: UIView {
         super.layoutSubviews()
         previewLayer.frame = bounds
     }
+    
+    private func convertCIImageToCGImage(inputImage: CIImage) -> CGImage? {
+        let context = CIContext(options: nil)
+        if let cgImage = context.createCGImage(inputImage, from: inputImage.extent) {
+            return cgImage
+        }
+        return nil
+    }
 }
 
 extension CameraView: AVCaptureVideoDataOutputSampleBufferDelegate {
@@ -88,13 +96,5 @@ extension CameraView: AVCaptureVideoDataOutputSampleBufferDelegate {
         guard let cgImage = convertCIImageToCGImage(inputImage: image)
             else { return }
         delegate?.processed(image: cgImage)
-    }
-    
-    func convertCIImageToCGImage(inputImage: CIImage) -> CGImage? {
-        let context = CIContext(options: nil)
-        if let cgImage = context.createCGImage(inputImage, from: inputImage.extent) {
-            return cgImage
-        }
-        return nil
     }
 }

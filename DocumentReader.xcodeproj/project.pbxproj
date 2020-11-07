@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		42BC0CB0A9E94F4A8CA07C21 /* Pods_DocumentReader_DocumentReaderTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DCC9983E2B5C0D59DAC6712 /* Pods_DocumentReader_DocumentReaderTests.framework */; };
 		B4A03011254DC9E300D71F37 /* CameraVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4A03010254DC9E300D71F37 /* CameraVC.swift */; };
 		B4A0301C254DD2F600D71F37 /* IsDebug.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4A0301B254DD2F600D71F37 /* IsDebug.swift */; };
 		B4A0303E254DE4A600D71F37 /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4A0303D254DE4A600D71F37 /* CameraView.swift */; };
@@ -68,7 +69,12 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		18DE9F20768EDA210DFCA5C3 /* Pods-DocumentReaderTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DocumentReaderTests.debug.xcconfig"; path = "Target Support Files/Pods-DocumentReaderTests/Pods-DocumentReaderTests.debug.xcconfig"; sourceTree = "<group>"; };
+		190C1D67DA29E912FF165917 /* Pods-DocumentReaderTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DocumentReaderTests.release.xcconfig"; path = "Target Support Files/Pods-DocumentReaderTests/Pods-DocumentReaderTests.release.xcconfig"; sourceTree = "<group>"; };
+		2DCC9983E2B5C0D59DAC6712 /* Pods_DocumentReader_DocumentReaderTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DocumentReader_DocumentReaderTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4FB7B8346D521E1788A16D84 /* Pods-DocumentReader.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DocumentReader.release.xcconfig"; path = "Target Support Files/Pods-DocumentReader/Pods-DocumentReader.release.xcconfig"; sourceTree = "<group>"; };
+		564347F85158F00626B4C632 /* Pods-DocumentReader-DocumentReaderTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DocumentReader-DocumentReaderTests.debug.xcconfig"; path = "Target Support Files/Pods-DocumentReader-DocumentReaderTests/Pods-DocumentReader-DocumentReaderTests.debug.xcconfig"; sourceTree = "<group>"; };
+		80050F295A2D860FFB31CCC1 /* Pods-DocumentReader-DocumentReaderTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DocumentReader-DocumentReaderTests.release.xcconfig"; path = "Target Support Files/Pods-DocumentReader-DocumentReaderTests/Pods-DocumentReader-DocumentReaderTests.release.xcconfig"; sourceTree = "<group>"; };
 		9E583C605319D591361BB75C /* Pods-DocumentReader.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DocumentReader.debug.xcconfig"; path = "Target Support Files/Pods-DocumentReader/Pods-DocumentReader.debug.xcconfig"; sourceTree = "<group>"; };
 		B4A03010254DC9E300D71F37 /* CameraVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraVC.swift; sourceTree = "<group>"; };
 		B4A0301B254DD2F600D71F37 /* IsDebug.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IsDebug.swift; sourceTree = "<group>"; };
@@ -119,6 +125,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				42BC0CB0A9E94F4A8CA07C21 /* Pods_DocumentReader_DocumentReaderTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,6 +145,7 @@
 				B4DE2DEB254B4FC700B14E07 /* QKMRZScanner.framework */,
 				B4DE2DBA254B4A8100B14E07 /* libc++.tbd */,
 				E304D2A44EBB828864B4B60A /* Pods_DocumentReader.framework */,
+				2DCC9983E2B5C0D59DAC6712 /* Pods_DocumentReader_DocumentReaderTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -147,6 +155,10 @@
 			children = (
 				9E583C605319D591361BB75C /* Pods-DocumentReader.debug.xcconfig */,
 				4FB7B8346D521E1788A16D84 /* Pods-DocumentReader.release.xcconfig */,
+				18DE9F20768EDA210DFCA5C3 /* Pods-DocumentReaderTests.debug.xcconfig */,
+				190C1D67DA29E912FF165917 /* Pods-DocumentReaderTests.release.xcconfig */,
+				564347F85158F00626B4C632 /* Pods-DocumentReader-DocumentReaderTests.debug.xcconfig */,
+				80050F295A2D860FFB31CCC1 /* Pods-DocumentReader-DocumentReaderTests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -330,9 +342,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B4DE2CC2254B35F500B14E07 /* Build configuration list for PBXNativeTarget "DocumentReaderTests" */;
 			buildPhases = (
+				7BC2CA7A74A124534285BC84 /* [CP] Check Pods Manifest.lock */,
 				B4DE2CA7254B35F500B14E07 /* Sources */,
 				B4DE2CA8254B35F500B14E07 /* Frameworks */,
 				B4DE2CA9254B35F500B14E07 /* Resources */,
+				A4A82953FD4B264C2CD07C89 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -452,6 +466,45 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7BC2CA7A74A124534285BC84 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-DocumentReader-DocumentReaderTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A4A82953FD4B264C2CD07C89 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DocumentReader-DocumentReaderTests/Pods-DocumentReader-DocumentReaderTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DocumentReader-DocumentReaderTests/Pods-DocumentReader-DocumentReaderTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-DocumentReader-DocumentReaderTests/Pods-DocumentReader-DocumentReaderTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		B4DE2D41254B3CF700B14E07 /* Lint */ = {
@@ -740,6 +793,7 @@
 		};
 		B4DE2CC3254B35F500B14E07 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 564347F85158F00626B4C632 /* Pods-DocumentReader-DocumentReaderTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -762,6 +816,7 @@
 		};
 		B4DE2CC4254B35F500B14E07 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 80050F295A2D860FFB31CCC1 /* Pods-DocumentReader-DocumentReaderTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";

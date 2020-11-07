@@ -7,7 +7,25 @@
 		<key>DocumentReader.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>2</integer>
+			<integer>4</integer>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>B4DE2C94254B35F300B14E07</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>B4DE2CAA254B35F500B14E07</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>B4DE2CB5254B35F500B14E07</key>
+		<dict>
+			<key>primary</key>
+			<true/>
 		</dict>
 	</dict>
 </dict>
