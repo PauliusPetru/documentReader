@@ -23,7 +23,6 @@ final class ViewController: UIViewController {
     }
     
     private func validateCardInfo(_ mrz: String) {
-        print("🟢 \(mrz)")
         viewModel?.handle(input: .receivedCard(mrz))
     }
     

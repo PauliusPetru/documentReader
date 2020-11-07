@@ -1,11 +1,31 @@
 import Foundation
 import Vision
 
-final class CameraVM: NSObject {
-    //TODO: rewrite
+final class CameraVM: ViewModel {
+    
+    typealias OutputHandler = (Output) -> Void
+
+    enum Input {
+        case scanned(CGImage)
+    }
+    enum Output {
+        case processed(String)
+    }
+
+    var outputHandler: OutputHandler?
+
+    func handle(input: Input) {
+
+        switch input {
+
+        case .scanned(let image):
+            self.processMrz(from: image)
+        }
+    }
+
     private var isProcessing = false
     
-    func processMrz(from image: CGImage) -> String? {
+    private func processMrz(from image: CGImage) {
         isProcessing = true
         // Create a new image-request handler.
         let requestHandler = VNImageRequestHandler(cgImage: image)
@@ -16,7 +36,7 @@ final class CameraVM: NSObject {
             guard let self = self else { return }
             strings = self.recognizeText(from: request, error: error)
         }
-
+        
         do {
             // Perform the text-recognition request.
             try requestHandler.perform([request])
@@ -24,8 +44,11 @@ final class CameraVM: NSObject {
             isProcessing = false
             print("🔴 Unable to perform the requests: \(error).")
         }
+        
         isProcessing = false
-        return validateMrz(from: strings)
+        
+        guard let mrz = validateMrz(from: strings) else { return }
+        self.outputHandler?(.processed(mrz))
     }
     
     private func recognizeText(from request: VNRequest, error: Error?) -> [String] {
