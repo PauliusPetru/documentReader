@@ -1,4 +1,4 @@
-import Foundation
+import Vision
 import AVFoundation
 import UIKit
 
@@ -33,6 +33,10 @@ final class CameraView: UIView {
         session.sessionPreset = .vga640x480
         return session
     }()
+    
+    private let requestHandler = VNSequenceRequestHandler()
+    private var rectangleDrawing: CAShapeLayer?
+    private var paymentCardRectangleObservation: VNRectangleObservation?
 
     override init(frame: CGRect) {
         super.init(frame: frame)
